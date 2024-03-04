@@ -95,6 +95,9 @@ def test_delete_question_by_id(client):
     res = client.delete("/question/5")
     assert res.status_code == 200
 
+def test_get_question_by_id_fail(client):
+    res = client.delete("/question/100")
+    assert res.status_code == 404
 
 def test_delete_question_by_id_not_found(client):
     res = client.delete("/question/100")
